@@ -3,10 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+
+import '../../../../core/theme/color/tumitate_colors.dart';
 import '../providers/login_page/auto_login_switch_provider.dart';
 import '../providers/login_page/bio_login_switch_provider.dart';
-
-import '../../../../main.dart';
 import '../providers/login_page/id_save_check_provider.dart';
 import '../providers/login_page/pw_save_check_provider.dart';
 
@@ -76,7 +76,7 @@ class _IDFormWidgetState extends ConsumerState<IDFormWidget> {
                     child: Checkbox(
                       value: idSaveCheckState,
                       side: const BorderSide(width: 0.56),
-                      checkColor: dGreen,
+                      checkColor: TumitateColors().dGreen,
                       onChanged: (value) {
                         ref
                             .read(idSaveCheckProvider.notifier)

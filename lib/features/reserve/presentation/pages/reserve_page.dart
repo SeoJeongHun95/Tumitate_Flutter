@@ -7,7 +7,21 @@ class ReservePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("ReservePage"),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.settings_outlined,
+              color: Colors.lightGreen,
+              size: 30,
+            ),
+          ),
+        ],
+      ),
+      body: SafeArea(
+        child: Container(
+          color: Colors.red,
+        ),
       ),
     );
   }

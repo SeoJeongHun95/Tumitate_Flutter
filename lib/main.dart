@@ -3,8 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'core/router/router.dart';
-
-const Color dGreen = Color.fromARGB(255, 211, 239, 139);
+import 'core/theme/color/tumitate_colors.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -23,9 +22,11 @@ class MyApp extends ConsumerWidget {
         title: 'Tumitate Flutter',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(
-            seedColor: const Color.fromARGB(255, 211, 239, 139),
+            seedColor: TumitateColors().dGreen,
             background: Colors.white,
           ),
+          appBarTheme:
+              const AppBarTheme().copyWith(backgroundColor: Colors.white),
           useMaterial3: true,
         ),
         routerConfig: route,
