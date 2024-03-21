@@ -48,6 +48,8 @@ class _IDFormWidgetState extends ConsumerState<IDFormWidget> {
               child: TextFormField(
                 enableInteractiveSelection: false,
                 controller: idCtrl,
+                maxLength: 10,
+                maxLines: 1,
                 //半角数字
                 inputFormatters: [
                   FilteringTextInputFormatter.allow(

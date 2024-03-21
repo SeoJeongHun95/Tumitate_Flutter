@@ -47,6 +47,8 @@ class _PWFormWidgetState extends ConsumerState<PWFormWidget> {
               flex: 3,
               child: TextFormField(
                 enableInteractiveSelection: false,
+                maxLength: 32,
+                maxLines: 1,
                 //ASCII 33 ~ 126
                 inputFormatters: [
                   FilteringTextInputFormatter.allow(
