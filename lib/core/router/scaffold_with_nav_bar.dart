@@ -35,7 +35,7 @@ class ScaffoldWithNavBar extends ConsumerWidget {
             label: JPStrings.RESERVE,
           ),
           const BottomNavigationBarItem(
-            icon: Icon(Icons.receipt_long_rounded, size: 30),
+            icon: Icon(Icons.description_outlined, size: 30),
             label: JPStrings.DETAIL,
           ),
           const BottomNavigationBarItem(
