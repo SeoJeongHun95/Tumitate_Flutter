@@ -35,7 +35,7 @@ class RateList extends _$RateList {
 
   void changeRate() {
     Timer.periodic(const Duration(seconds: 2), (timer) {
-      final rn = (Random().nextDouble() - 0.51) / 10;
+      final rn = (Random().nextDouble() - 0.5) / 10;
 
       final temp = [
         for (final rate in state)

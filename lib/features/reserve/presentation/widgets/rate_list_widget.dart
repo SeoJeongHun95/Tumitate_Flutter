@@ -95,9 +95,9 @@ class RateListItem extends StatelessWidget {
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: double.parse(rate.diff) > 0
-                                ? Colors.blue
+                                ? Colors.red
                                 : double.parse(rate.diff) < 0
-                                    ? Colors.red
+                                    ? Colors.blue
                                     : Colors.grey,
                             width: 2,
                           ),
@@ -107,9 +107,9 @@ class RateListItem extends StatelessWidget {
                             rate.diff,
                             style: TextStyle(
                               color: double.parse(rate.diff) > 0
-                                  ? Colors.blue
+                                  ? Colors.red
                                   : double.parse(rate.diff) < 0
-                                      ? Colors.red
+                                      ? Colors.blue
                                       : Colors.grey,
                             ),
                           ),
