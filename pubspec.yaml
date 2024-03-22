@@ -13,6 +13,7 @@ dependencies:
     sdk: flutter
   badges: ^3.1.2
   cupertino_icons: ^1.0.6
+  decimal: ^2.3.3
   dio: ^5.4.1
   flutter_riverpod: ^2.5.1
   flutter_screenutil: ^5.9.0
@@ -41,6 +42,7 @@ flutter:
 
   assets:
     - lib/core/assets/img/
+    - lib/core/assets/img/flg/
 
 flutter_launcher_icons:
   android: "launcher_icon"

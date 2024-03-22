@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/menu/presentation/providers/menu_badge_provider.dart';
+import '../theme/local/jp_strings.dart';
 
 class ScaffoldWithNavBar extends ConsumerWidget {
   const ScaffoldWithNavBar({
@@ -30,20 +31,32 @@ class ScaffoldWithNavBar extends ConsumerWidget {
         type: BottomNavigationBarType.fixed,
         items: <BottomNavigationBarItem>[
           const BottomNavigationBarItem(
-              icon: Icon(Icons.price_change_outlined, size: 30), label: '積立'),
+            icon: Icon(Icons.price_change_outlined, size: 30),
+            label: JPStrings.RESERVE,
+          ),
           const BottomNavigationBarItem(
-              icon: Icon(Icons.receipt_long_rounded, size: 30), label: '明細'),
+            icon: Icon(Icons.receipt_long_rounded, size: 30),
+            label: JPStrings.DETAIL,
+          ),
           const BottomNavigationBarItem(
-              icon: Icon(Icons.savings_outlined, size: 30), label: '積立状況'),
+            icon: Icon(Icons.savings_outlined, size: 30),
+            label: JPStrings.RESERVECONDITION,
+          ),
           const BottomNavigationBarItem(
-              icon: Icon(Icons.restore_rounded, size: 30), label: '履歴'),
+            icon: Icon(Icons.restore_rounded, size: 30),
+            label: JPStrings.RECORD,
+          ),
           BottomNavigationBarItem(
             icon: hasMenuAlert
                 ? const badges.Badge(
+                    badgeAnimation: badges.BadgeAnimation.scale(),
                     child: Icon(Icons.menu_rounded, size: 30),
                   )
-                : const Icon(Icons.menu_rounded, size: 30),
-            label: 'メニュー',
+                : const Icon(
+                    Icons.menu_rounded,
+                    size: 30,
+                  ),
+            label: JPStrings.MENU,
           ),
         ],
         currentIndex: navigationShell.currentIndex,

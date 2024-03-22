@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/theme/local/jp_strings.dart';
 import '../providers/login_state_provider.dart';
 
 class LoginBtn extends ConsumerWidget {
@@ -18,7 +19,7 @@ class LoginBtn extends ConsumerWidget {
         fixedSize: Size(btnWidth, btnHeight),
       ),
       onPressed: () => ref.read(authProvider.notifier).login(),
-      child: const Text("ログイン"),
+      child: const Text(JPStrings.LOGIN),
     );
   }
 }

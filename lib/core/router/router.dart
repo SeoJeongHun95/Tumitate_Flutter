@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:tumitate_flutter/features/menu/presentation/pages/menu_page.dart';
-import 'package:tumitate_flutter/features/record/presentation/pages/record_page.dart';
-import 'package:tumitate_flutter/features/reserve/presentation/pages/reserve_page.dart';
 
 import '../../features/auth/presentation/pages/login_page.dart';
 import '../../features/auth/presentation/pages/page_not_found.dart';
 import '../../features/auth/presentation/providers/login_state_provider.dart';
 import '../../features/conditions/presentation/pages/condition_page.dart';
 import '../../features/details/presentation/pages/detail_page.dart';
+import '../../features/menu/presentation/pages/menu_page.dart';
+import '../../features/record/presentation/pages/record_page.dart';
+import '../../features/reserve/presentation/pages/reserve_page.dart';
 import 'scaffold_with_nav_bar.dart';
 
 part 'router.g.dart';
@@ -31,8 +31,11 @@ GoRouter router(RouterRef ref) {
 
       //비로그인상태인 경우
       if (!auth) return signed ? null : "/login";
+
       //로그인 상태인인 경우
-      if (signed) return "/";
+      //?? 없어도 가네???
+      // if (signed) return "/";
+
       //리다이렉트로 인한 디폴트값은 없음
       return null;
     },

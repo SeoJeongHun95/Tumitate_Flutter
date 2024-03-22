@@ -6,9 +6,11 @@ class ConditionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.yellow,
       appBar: AppBar(
-        title: const Text("ConditionPage"),
+        title: const Text("つみたて状況"),
       ),
+      body: SafeArea(child: Container()),
     );
   }
 }

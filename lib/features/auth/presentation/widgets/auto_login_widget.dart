@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../core/theme/local/jp_strings.dart';
 import '../providers/login_page/auto_login_switch_provider.dart';
 import '../providers/login_page/bio_login_switch_provider.dart';
 import '../providers/login_page/pw_save_check_provider.dart';
@@ -17,7 +18,7 @@ class AutoLoginWidget extends ConsumerWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          "自動ログイン",
+          JPStrings.AUTOLOGIN,
           style: Theme.of(context).textTheme.titleMedium,
         ),
         Switch(

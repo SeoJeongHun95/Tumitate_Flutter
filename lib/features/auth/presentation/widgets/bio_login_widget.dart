@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:tumitate_flutter/core/theme/local/jp_strings.dart';
 
 import '../providers/login_page/auto_login_switch_provider.dart';
 import '../providers/login_page/bio_login_switch_provider.dart';
@@ -17,7 +18,7 @@ class BioSwitchWidget extends ConsumerWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          "生体確認でログイン",
+          JPStrings.BIOLOGIN,
           style: Theme.of(context).textTheme.titleMedium,
         ),
         Switch(

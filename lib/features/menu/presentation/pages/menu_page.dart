@@ -12,6 +12,7 @@ class MenuPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
+      backgroundColor: Colors.blue,
       appBar: AppBar(
         title: const Text("MenuPage"),
       ),

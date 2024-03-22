@@ -1,24 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'menu_badge_provider.dart';
+part of 'rate_list_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$menuBadgeHash() => r'303ffcc0562429e53263f704631188ea59b6650c';
+String _$rateListHash() => r'47f5f52d2d1155c512325af521b80caefe1574bb';
 
-/// See also [MenuBadge].
-@ProviderFor(MenuBadge)
-final menuBadgeProvider = AutoDisposeNotifierProvider<MenuBadge, int>.internal(
-  MenuBadge.new,
-  name: r'menuBadgeProvider',
+/// See also [RateList].
+@ProviderFor(RateList)
+final rateListProvider =
+    AutoDisposeNotifierProvider<RateList, List<Rate>>.internal(
+  RateList.new,
+  name: r'rateListProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$menuBadgeHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$rateListHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$MenuBadge = AutoDisposeNotifier<int>;
+typedef _$RateList = AutoDisposeNotifier<List<Rate>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

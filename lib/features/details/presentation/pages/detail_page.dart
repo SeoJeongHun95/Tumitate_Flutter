@@ -6,9 +6,11 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.orange,
       appBar: AppBar(
-        title: const Text("DetailPage"),
+        title: const Text("明細"),
       ),
+      body: SafeArea(child: Container()),
     );
   }
 }

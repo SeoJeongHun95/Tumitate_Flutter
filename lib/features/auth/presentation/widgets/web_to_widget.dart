@@ -3,7 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-final Uri _url = Uri.parse('https://www.sinfo-inc.co.jp');
+import '../../../../core/theme/local/jp_strings.dart';
+
+final Uri _url = Uri.parse(JPStrings.WEBTOLINK_URL);
 
 class WebToWidget extends StatelessWidget {
   const WebToWidget({super.key});
@@ -19,7 +21,7 @@ class WebToWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text("ログインでお困りの方はこちら"),
+              const Text(JPStrings.WEBTOLINK_TEXT_1),
               Gap(4.w),
               const Icon(Icons.open_in_browser_rounded),
             ],
@@ -31,7 +33,7 @@ class WebToWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text("パスワードをお忘れの方はこちら"),
+              const Text(JPStrings.WEBTOLINK_TEXT_2),
               Gap(4.w),
               const Icon(Icons.open_in_browser_rounded),
             ],
@@ -43,7 +45,7 @@ class WebToWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text("口座開設をご希望の方はこちら"),
+              const Text(JPStrings.WEBTOLINK_TEXT_3),
               Gap(4.w),
               const Icon(Icons.open_in_browser_rounded),
             ],

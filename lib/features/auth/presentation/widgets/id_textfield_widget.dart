@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 import '../../../../core/theme/color/tumitate_colors.dart';
+import '../../../../core/theme/local/jp_strings.dart';
 import '../providers/login_page/auto_login_switch_provider.dart';
 import '../providers/login_page/bio_login_switch_provider.dart';
 import '../providers/login_page/id_save_check_provider.dart';
@@ -36,7 +37,7 @@ class _IDFormWidgetState extends ConsumerState<IDFormWidget> {
         SizedBox(
           width: double.maxFinite,
           child: Text(
-            "ログインID",
+            JPStrings.LOGIN_ID,
             style: Theme.of(context).textTheme.titleMedium,
             textAlign: TextAlign.start,
           ),
@@ -96,7 +97,7 @@ class _IDFormWidgetState extends ConsumerState<IDFormWidget> {
                     ),
                   ),
                   Text(
-                    "保存",
+                    JPStrings.PRESERVATION,
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
                 ],

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/theme/local/jp_strings.dart';
+
 class VersionWidget extends StatelessWidget {
   const VersionWidget({super.key});
 
@@ -8,7 +10,7 @@ class VersionWidget extends StatelessWidget {
     return SizedBox(
       width: double.maxFinite,
       child: Text(
-        "Ver 1.0.00",
+        JPStrings.VERSION + JPStrings.VERSION_NUMBER,
         textAlign: TextAlign.end,
         style: Theme.of(context).textTheme.titleMedium,
       ),

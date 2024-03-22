@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class ReservePage extends StatelessWidget {
+import '../../data/models/rate.dart';
+import '../providers/rate_list_provider.dart';
+
+class ReservePage extends ConsumerWidget {
   const ReservePage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final rateList = ref.watch(rateListProvider);
+
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -19,8 +25,15 @@ class ReservePage extends StatelessWidget {
         ],
       ),
       body: SafeArea(
-        child: Container(
-          color: Colors.red,
+        child: ListView.separated(
+          itemBuilder: (context, index) {
+            final Rate rate = rateList[index];
+            return Row(
+              children: [Text(rate.meigaraMei), Text(rate.diff)],
+            );
+          },
+          separatorBuilder: (context, index) => const Divider(),
+          itemCount: rateList.length,
         ),
       ),
     );

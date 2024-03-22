@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
+import '../../../../core/theme/local/jp_strings.dart';
 import '../providers/login_page/auto_login_switch_provider.dart';
 import '../providers/login_page/bio_login_switch_provider.dart';
 import '../providers/login_page/id_save_check_provider.dart';
@@ -36,7 +37,7 @@ class _PWFormWidgetState extends ConsumerState<PWFormWidget> {
         SizedBox(
           width: double.maxFinite,
           child: Text(
-            "パスワード",
+            JPStrings.PASSWORD,
             style: Theme.of(context).textTheme.titleMedium,
             textAlign: TextAlign.start,
           ),
@@ -99,7 +100,7 @@ class _PWFormWidgetState extends ConsumerState<PWFormWidget> {
                     ),
                   ),
                   Text(
-                    "保存",
+                    JPStrings.PRESERVATION,
                     style: idSaveCheckState
                         ? Theme.of(context).textTheme.titleMedium
                         : Theme.of(context)
