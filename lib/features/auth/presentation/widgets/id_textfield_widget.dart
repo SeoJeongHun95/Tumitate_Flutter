@@ -77,7 +77,6 @@ class _IDFormWidgetState extends ConsumerState<IDFormWidget> {
                     child: Checkbox(
                       value: idSaveCheckState,
                       side: const BorderSide(width: 0.56),
-                      checkColor: TumitateColors().dGreen,
                       onChanged: (value) {
                         ref
                             .read(idSaveCheckProvider.notifier)

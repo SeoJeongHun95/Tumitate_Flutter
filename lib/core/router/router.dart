@@ -10,6 +10,7 @@ import '../../features/details/presentation/pages/detail_page.dart';
 import '../../features/menu/presentation/pages/menu_page.dart';
 import '../../features/record/presentation/pages/record_page.dart';
 import '../../features/reserve/presentation/pages/reserve_page.dart';
+import '../../features/reserve/presentation/pages/reserve_setting_page.dart';
 import 'scaffold_with_nav_bar.dart';
 
 part 'router.g.dart';
@@ -53,13 +54,13 @@ GoRouter router(RouterRef ref) {
                 path: "/tumitate",
                 name: "TumitatePage",
                 builder: (context, state) => const ReservePage(),
-                // routes: const [
-                //   GoRoute(
-                //     path: "",
-                //     name: RouteName.FIRST_DETAIL,
-                //     builder: (context, state) => const FirstDetailsPage(),
-                //   ),
-                // ],
+                routes: [
+                  GoRoute(
+                    path: "reserveSetting",
+                    name: "ReserveSetting",
+                    builder: (context, state) => const ReserveSettingPage(),
+                  ),
+                ],
               ),
             ],
           ),

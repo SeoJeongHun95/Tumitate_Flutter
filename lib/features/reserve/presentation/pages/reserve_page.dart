@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 import '../widgets/rate_list_widget.dart';
 
@@ -14,11 +15,13 @@ class ReservePage extends ConsumerWidget {
         scrolledUnderElevation: 0,
         actions: [
           IconButton(
-            onPressed: () {},
-            icon: const Icon(
+            onPressed: () {
+              context.goNamed("ReserveSetting");
+            },
+            icon: Icon(
               Icons.settings_outlined,
               color: Colors.lightGreen,
-              size: 30,
+              size: 24.sp,
             ),
           ),
         ],
