@@ -62,6 +62,8 @@ class _PWFormWidgetState extends ConsumerState<PWFormWidget> {
                   contentPadding: EdgeInsets.all(8),
                   border: OutlineInputBorder(),
                   isDense: true,
+                  //MaxLenth Count 없애기
+                  counterText: "",
                 ),
               ),
             ),

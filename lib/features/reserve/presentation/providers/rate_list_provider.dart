@@ -23,6 +23,9 @@ class RateList extends _$RateList {
     ref.onCancel(() {
       print("RateListProvider onCancel");
     });
+    ref.onAddListener(() {
+      print("RateListProvider onResume");
+    });
     ref.onRemoveListener(() {
       print("RateListProvider onRemoveListener");
     });

@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
-import '../../../../core/theme/color/tumitate_colors.dart';
 import '../../../../core/theme/local/jp_strings.dart';
 import '../providers/login_page/auto_login_switch_provider.dart';
 import '../providers/login_page/bio_login_switch_provider.dart';
@@ -62,6 +61,8 @@ class _IDFormWidgetState extends ConsumerState<IDFormWidget> {
                   contentPadding: EdgeInsets.all(8),
                   border: OutlineInputBorder(),
                   isDense: true,
+                  //MaxLenth Count 없애기
+                  counterText: "",
                 ),
               ),
             ),
