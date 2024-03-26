@@ -10,6 +10,22 @@ import 'rate_setting_provider.dart';
 
 part 'rate_list_provider.g.dart';
 
+// ref.onResume(() {
+//   print("RateListProvider onResume");
+// });
+// ref.onCancel(() {
+//   print("RateListProvider onCancel");
+// });
+// ref.onAddListener(() {
+//   print("RateListProvider onResume");
+// });
+// ref.onRemoveListener(() {
+//   print("RateListProvider onRemoveListener");
+// });
+// ref.onDispose(() {
+//   print("RateListProvider onDispose");
+// });
+
 @riverpod
 class RateList extends _$RateList {
   d(String s) => Decimal.parse(s);
@@ -17,28 +33,27 @@ class RateList extends _$RateList {
   @override
   List<Rate> build() {
     changeRate();
-
-    ref.onResume(() {
-      print("RateListProvider onResume");
-    });
-    ref.onCancel(() {
-      print("RateListProvider onCancel");
-    });
-    ref.onAddListener(() {
-      print("RateListProvider onResume");
-    });
-    ref.onRemoveListener(() {
-      print("RateListProvider onRemoveListener");
-    });
-    ref.onDispose(() {
-      print("RateListProvider onDispose");
-    });
-
     return ref.watch(rateDataProvider);
   }
 
+  void chageSetting() {
+    final rateSettingList = ref.watch(rateSettingListProvider);
+
+    final result = [
+      for (int i = 0; i < rateSettingList.length; i++)
+        if (rateSettingList[i].show)
+          state
+              .where((element) =>
+                  element.meigaraId == rateSettingList[i].meigaraId)
+              .first
+    ];
+
+    state = result;
+  }
+
+  //걍 API대용
   void changeRate() {
-    Timer.periodic(const Duration(seconds: 2), (timer) {
+    Timer.periodic(const Duration(seconds: 1), (timer) {
       chageSetting();
 
       final rn = (Random().nextDouble() - 0.5) / 10;
@@ -58,22 +73,7 @@ class RateList extends _$RateList {
           else
             rate
       ];
-
       state = temp;
     });
-  }
-
-  void chageSetting() {
-    final rateList = ref.watch(rateDataProvider);
-    final rateSettingList = ref.watch(rateSettingListProvider);
-
-    state = [
-      for (int i = 0; i < rateSettingList.length; i++)
-        if (rateSettingList[i].show)
-          rateList
-              .where((element) =>
-                  element.meigaraId == rateSettingList[i].meigaraId)
-              .first
-    ];
   }
 }
