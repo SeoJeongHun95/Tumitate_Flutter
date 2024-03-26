@@ -6,6 +6,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../data/models/rate.dart';
 import '../../domain/repositories/rates_repository.dart';
+import 'rate_setting_provider.dart';
 
 part 'rate_list_provider.g.dart';
 
@@ -38,6 +39,8 @@ class RateList extends _$RateList {
 
   void changeRate() {
     Timer.periodic(const Duration(seconds: 2), (timer) {
+      chageSetting();
+
       final rn = (Random().nextDouble() - 0.5) / 10;
 
       final temp = [
@@ -58,5 +61,19 @@ class RateList extends _$RateList {
 
       state = temp;
     });
+  }
+
+  void chageSetting() {
+    final rateList = ref.watch(rateDataProvider);
+    final rateSettingList = ref.watch(rateSettingListProvider);
+
+    state = [
+      for (int i = 0; i < rateSettingList.length; i++)
+        if (rateSettingList[i].show)
+          rateList
+              .where((element) =>
+                  element.meigaraId == rateSettingList[i].meigaraId)
+              .first
+    ];
   }
 }

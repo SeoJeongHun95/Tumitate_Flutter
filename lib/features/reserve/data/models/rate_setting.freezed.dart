@@ -16,7 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$RateSetting {
-  Rate get rate => throw _privateConstructorUsedError;
+  String get meigaraId => throw _privateConstructorUsedError;
+  String get meigaraMei => throw _privateConstructorUsedError;
   bool get show => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -30,9 +31,7 @@ abstract class $RateSettingCopyWith<$Res> {
           RateSetting value, $Res Function(RateSetting) then) =
       _$RateSettingCopyWithImpl<$Res, RateSetting>;
   @useResult
-  $Res call({Rate rate, bool show});
-
-  $RateCopyWith<$Res> get rate;
+  $Res call({String meigaraId, String meigaraMei, bool show});
 }
 
 /// @nodoc
@@ -48,27 +47,24 @@ class _$RateSettingCopyWithImpl<$Res, $Val extends RateSetting>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? rate = null,
+    Object? meigaraId = null,
+    Object? meigaraMei = null,
     Object? show = null,
   }) {
     return _then(_value.copyWith(
-      rate: null == rate
-          ? _value.rate
-          : rate // ignore: cast_nullable_to_non_nullable
-              as Rate,
+      meigaraId: null == meigaraId
+          ? _value.meigaraId
+          : meigaraId // ignore: cast_nullable_to_non_nullable
+              as String,
+      meigaraMei: null == meigaraMei
+          ? _value.meigaraMei
+          : meigaraMei // ignore: cast_nullable_to_non_nullable
+              as String,
       show: null == show
           ? _value.show
           : show // ignore: cast_nullable_to_non_nullable
               as bool,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $RateCopyWith<$Res> get rate {
-    return $RateCopyWith<$Res>(_value.rate, (value) {
-      return _then(_value.copyWith(rate: value) as $Val);
-    });
   }
 }
 
@@ -80,10 +76,7 @@ abstract class _$$RateSettingImplCopyWith<$Res>
       __$$RateSettingImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Rate rate, bool show});
-
-  @override
-  $RateCopyWith<$Res> get rate;
+  $Res call({String meigaraId, String meigaraMei, bool show});
 }
 
 /// @nodoc
@@ -97,14 +90,19 @@ class __$$RateSettingImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? rate = null,
+    Object? meigaraId = null,
+    Object? meigaraMei = null,
     Object? show = null,
   }) {
     return _then(_$RateSettingImpl(
-      rate: null == rate
-          ? _value.rate
-          : rate // ignore: cast_nullable_to_non_nullable
-              as Rate,
+      meigaraId: null == meigaraId
+          ? _value.meigaraId
+          : meigaraId // ignore: cast_nullable_to_non_nullable
+              as String,
+      meigaraMei: null == meigaraMei
+          ? _value.meigaraMei
+          : meigaraMei // ignore: cast_nullable_to_non_nullable
+              as String,
       show: null == show
           ? _value.show
           : show // ignore: cast_nullable_to_non_nullable
@@ -116,17 +114,20 @@ class __$$RateSettingImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$RateSettingImpl implements _RateSetting {
-  const _$RateSettingImpl({required this.rate, this.show = true});
+  const _$RateSettingImpl(
+      {required this.meigaraId, required this.meigaraMei, this.show = true});
 
   @override
-  final Rate rate;
+  final String meigaraId;
+  @override
+  final String meigaraMei;
   @override
   @JsonKey()
   final bool show;
 
   @override
   String toString() {
-    return 'RateSetting(rate: $rate, show: $show)';
+    return 'RateSetting(meigaraId: $meigaraId, meigaraMei: $meigaraMei, show: $show)';
   }
 
   @override
@@ -134,12 +135,15 @@ class _$RateSettingImpl implements _RateSetting {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RateSettingImpl &&
-            (identical(other.rate, rate) || other.rate == rate) &&
+            (identical(other.meigaraId, meigaraId) ||
+                other.meigaraId == meigaraId) &&
+            (identical(other.meigaraMei, meigaraMei) ||
+                other.meigaraMei == meigaraMei) &&
             (identical(other.show, show) || other.show == show));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, rate, show);
+  int get hashCode => Object.hash(runtimeType, meigaraId, meigaraMei, show);
 
   @JsonKey(ignore: true)
   @override
@@ -149,11 +153,15 @@ class _$RateSettingImpl implements _RateSetting {
 }
 
 abstract class _RateSetting implements RateSetting {
-  const factory _RateSetting({required final Rate rate, final bool show}) =
-      _$RateSettingImpl;
+  const factory _RateSetting(
+      {required final String meigaraId,
+      required final String meigaraMei,
+      final bool show}) = _$RateSettingImpl;
 
   @override
-  Rate get rate;
+  String get meigaraId;
+  @override
+  String get meigaraMei;
   @override
   bool get show;
   @override
