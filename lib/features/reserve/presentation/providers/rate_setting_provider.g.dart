@@ -6,7 +6,7 @@ part of 'rate_setting_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$rateSettingListHash() => r'45ce26f5105efa7dee9304101acda4615b869222';
+String _$rateSettingListHash() => r'd01977b0d526bbbf2e1e24c9c940284c86329e24';
 
 /// See also [RateSettingList].
 @ProviderFor(RateSettingList)

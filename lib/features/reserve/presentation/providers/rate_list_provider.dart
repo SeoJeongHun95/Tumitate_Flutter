@@ -54,8 +54,6 @@ class RateList extends _$RateList {
   //걍 API대용
   void changeRate() {
     Timer.periodic(const Duration(seconds: 1), (timer) {
-      chageSetting();
-
       final rn = (Random().nextDouble() - 0.5) / 10;
 
       final temp = [

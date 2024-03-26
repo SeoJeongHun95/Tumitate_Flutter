@@ -12,18 +12,23 @@ class RateSettingList extends _$RateSettingList {
     return ref.watch(rateSettingRepositoryProvider);
   }
 
-  void changeShow(bool bool, String meigaraId) {
+  void changeShow(String meigaraId) {
     state = [
       for (final temp in state)
-        if (meigaraId == temp.meigaraId)
-          RateSetting(
-              meigaraId: meigaraId, meigaraMei: temp.meigaraMei, show: bool)
+        if (temp.meigaraId == meigaraId)
+          temp.copyWith(show: !temp.show)
         else
           temp
     ];
   }
 
-  void chageListSetting(List<RateSetting> list) {
-    state = list;
+  void chageSequnce(int oldIndex, int newIndex) {
+    if (oldIndex < newIndex) {
+      newIndex -= 1;
+    }
+    final List<RateSetting> tempList = state;
+    final RateSetting rs = tempList.removeAt(oldIndex);
+    tempList.insert(newIndex, rs);
+    state = tempList.toList();
   }
 }

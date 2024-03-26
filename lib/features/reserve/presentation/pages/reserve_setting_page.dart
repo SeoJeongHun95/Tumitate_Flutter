@@ -24,7 +24,7 @@ class ReserveSettingPage extends ConsumerWidget {
                         .where((element) => element.show)
                         .toList()
                         .length ==
-                    10
+                    rateSettingList.length
                 ? Colors.black
                 : Colors.red,
             fontSize: 20,

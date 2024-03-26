@@ -5,49 +5,35 @@ import 'package:gap/gap.dart';
 
 import '../providers/rate_setting_provider.dart';
 
-class RateListSettingWidget extends ConsumerStatefulWidget {
+class RateListSettingWidget extends ConsumerWidget {
   const RateListSettingWidget({super.key});
 
   @override
-  ConsumerState<RateListSettingWidget> createState() =>
-      _RateListSettingWidgetState();
-}
-
-class _RateListSettingWidgetState extends ConsumerState<RateListSettingWidget> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final rateSettingList = ref.watch(rateSettingListProvider);
 
     return ReorderableListView(
-      onReorder: (oldIndex, newIndex) {
-        if (oldIndex < newIndex) {
-          newIndex -= 1;
-        }
-        setState(() {
-          rateSettingList.insert(newIndex, rateSettingList.removeAt(oldIndex));
-        });
-      },
-      onReorderEnd: (index) => ref
+      onReorder: (oldIndex, newIndex) => ref
           .read(rateSettingListProvider.notifier)
-          .chageListSetting(rateSettingList),
+          .chageSequnce(oldIndex, newIndex),
       children: [
-        for (int index = 0; index < rateSettingList.length; index += 1)
+        for (final rs in rateSettingList)
           Container(
-            key: Key("$index"),
+            key: Key(rs.meigaraId),
             decoration: BoxDecoration(
               border: BorderDirectional(
                 bottom: BorderSide(color: Colors.grey.shade200),
               ),
             ),
             child: CheckboxListTile(
-              value: rateSettingList[index].show,
+              value: rs.show,
               checkboxShape: const CircleBorder(),
               activeColor: Colors.lightGreen,
               controlAffinity: ListTileControlAffinity.leading,
               title: Row(
                 children: [
                   Image.asset(
-                    "lib/core/assets/img/flg/${rateSettingList[index].meigaraId.toLowerCase()}.png",
+                    "lib/core/assets/img/flg/${rs.meigaraId.toLowerCase()}.png",
                     width: 40.w,
                     height: 25.h,
                     fit: BoxFit.fill,
@@ -56,7 +42,7 @@ class _RateListSettingWidgetState extends ConsumerState<RateListSettingWidget> {
                   ),
                   Gap(4.w),
                   Text(
-                    rateSettingList[index].meigaraMei,
+                    rs.meigaraMei,
                     style: TextStyle(
                       fontSize: 12.w,
                       fontWeight: FontWeight.w600,
@@ -64,11 +50,9 @@ class _RateListSettingWidgetState extends ConsumerState<RateListSettingWidget> {
                   ),
                 ],
               ),
-              onChanged: (value) =>
-                  ref.read(rateSettingListProvider.notifier).changeShow(
-                        value!,
-                        rateSettingList[index].meigaraId,
-                      ),
+              onChanged: (value) => ref
+                  .read(rateSettingListProvider.notifier)
+                  .changeShow(rs.meigaraId),
               secondary: const Icon(
                 Icons.drag_indicator_rounded,
                 color: Colors.lightGreen,
