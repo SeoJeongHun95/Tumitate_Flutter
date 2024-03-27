@@ -11,6 +11,12 @@ class ReserveSettingPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final rateSettingList = ref.watch(rateSettingListProvider);
+    //앞 위 밑 z
+    //앞 위 밑 space
+
+    //q w e 비 r 비
+    //a s d f g 비 h 비
+    //v b s 비 c 비
 
     return Scaffold(
       appBar: AppBar(
@@ -33,7 +39,9 @@ class ReserveSettingPage extends ConsumerWidget {
         actions: [
           TextButton(
             onPressed: () {
-              ref.read(rateListProvider.notifier).chageSetting();
+              ref
+                  .read(rateListProvider.notifier)
+                  .chageSetting(changeList: rateSettingList);
               Navigator.of(context).pop();
             },
             child: const Text(

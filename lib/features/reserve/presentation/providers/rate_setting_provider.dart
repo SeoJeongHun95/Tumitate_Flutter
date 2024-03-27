@@ -29,6 +29,6 @@ class RateSettingList extends _$RateSettingList {
     final List<RateSetting> tempList = state;
     final RateSetting rs = tempList.removeAt(oldIndex);
     tempList.insert(newIndex, rs);
-    state = tempList.toList();
+    state = [...tempList];
   }
 }

@@ -5,8 +5,8 @@ import 'package:decimal/decimal.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../data/models/rate.dart';
+import '../../data/models/rate_setting.dart';
 import '../../domain/repositories/rates_repository.dart';
-import 'rate_setting_provider.dart';
 
 part 'rate_list_provider.g.dart';
 
@@ -36,16 +36,15 @@ class RateList extends _$RateList {
     return ref.watch(rateDataProvider);
   }
 
-  void chageSetting() {
-    final rateSettingList = ref.watch(rateSettingListProvider);
+  void chageSetting({required List<RateSetting> changeList}) {
+    final rateSettingList = changeList;
+    final newState = ref.read(rateDataProvider);
 
     final result = [
-      for (int i = 0; i < rateSettingList.length; i++)
-        if (rateSettingList[i].show)
-          state
-              .where((element) =>
-                  element.meigaraId == rateSettingList[i].meigaraId)
-              .first
+      for (final rs in rateSettingList)
+        if (rs.show)
+          for (final st in newState)
+            if (st.meigaraId == rs.meigaraId) st
     ];
 
     state = result;

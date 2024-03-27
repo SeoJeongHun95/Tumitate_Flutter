@@ -28,6 +28,7 @@ class RateListSettingWidget extends ConsumerWidget {
             child: CheckboxListTile(
               value: rs.show,
               checkboxShape: const CircleBorder(),
+              side: const BorderSide(color: Colors.grey),
               activeColor: Colors.lightGreen,
               controlAffinity: ListTileControlAffinity.leading,
               title: Row(
@@ -54,7 +55,7 @@ class RateListSettingWidget extends ConsumerWidget {
                   .read(rateSettingListProvider.notifier)
                   .changeShow(rs.meigaraId),
               secondary: const Icon(
-                Icons.drag_indicator_rounded,
+                Icons.drag_handle_rounded,
                 color: Colors.lightGreen,
               ),
             ),
