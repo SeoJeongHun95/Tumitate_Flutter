@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:tumitate_flutter/core/theme/local/jp_strings.dart';
 
 import '../providers/rate_list_provider.dart';
 import '../providers/rate_setting_provider.dart';
@@ -11,12 +12,6 @@ class ReserveSettingPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final rateSettingList = ref.watch(rateSettingListProvider);
-    //앞 위 밑 z
-    //앞 위 밑 space
-
-    //q w e 비 r 비
-    //a s d f g 비 h 비
-    //v b s 비 c 비
 
     return Scaffold(
       appBar: AppBar(
@@ -24,7 +19,7 @@ class ReserveSettingPage extends ConsumerWidget {
         scrolledUnderElevation: 0,
         automaticallyImplyLeading: false,
         title: Text(
-          "表示 (${rateSettingList.where((element) => element.show).toList().length})",
+          "${JPStrings.SHOW} (${rateSettingList.where((element) => element.show).toList().length})",
           style: TextStyle(
             color: rateSettingList
                         .where((element) => element.show)
@@ -45,7 +40,7 @@ class ReserveSettingPage extends ConsumerWidget {
               Navigator.of(context).pop();
             },
             child: const Text(
-              "完了",
+              JPStrings.DONE,
               style: TextStyle(
                 color: Colors.lightGreen,
                 fontSize: 20,

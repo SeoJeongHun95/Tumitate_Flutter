@@ -11,45 +11,43 @@ import '../../features/menu/presentation/pages/menu_page.dart';
 import '../../features/record/presentation/pages/record_page.dart';
 import '../../features/reserve/presentation/pages/reserve_page.dart';
 import '../../features/reserve/presentation/pages/reserve_setting_page.dart';
+import 'router_strings.dart';
 import 'scaffold_with_nav_bar.dart';
 
 part 'router.g.dart';
 
 final rootNavigatorKey = GlobalKey<NavigatorState>();
-final reserveNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'reserve');
-final detailsNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'detail');
+final reserveNavigatorKey =
+    GlobalKey<NavigatorState>(debugLabel: RouterStrings.DEBUG_LABEL_REVERSE);
+final detailsNavigatorKey =
+    GlobalKey<NavigatorState>(debugLabel: RouterStrings.DEBUG_LABEL_DETAIL);
 final conditionNavigatorKey =
-    GlobalKey<NavigatorState>(debugLabel: 'condition');
-final recordNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'record');
-final menuNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'menu');
+    GlobalKey<NavigatorState>(debugLabel: RouterStrings.DEBUG_LABEL_CONDITION);
+final recordNavigatorKey =
+    GlobalKey<NavigatorState>(debugLabel: RouterStrings.DEBUG_LABEL_RECORD);
+final menuNavigatorKey =
+    GlobalKey<NavigatorState>(debugLabel: RouterStrings.DEBUG_LABEL_MENU);
 
 @riverpod
 GoRouter router(RouterRef ref) {
   final authState = ref.watch(authProvider);
 
   return GoRouter(
-    initialLocation: "/",
+    initialLocation: RouterStrings.PATH_INITIONAL,
     navigatorKey: rootNavigatorKey,
     redirect: (context, state) {
       //로그인 상태인가 아닌가를 확인
       final auth = authState;
-
-      final signed = state.matchedLocation == "/login";
-
+      final signed = state.matchedLocation == RouterStrings.PATH_LOGIN;
       //비로그인상태인 경우
-      if (!auth) return signed ? null : "/login";
+      if (!auth) return signed ? null : RouterStrings.PATH_LOGIN;
 
-      //로그인 상태인인 경우
-      //?? 없어도 가네???
-      // if (signed) return "/";
-
-      //리다이렉트로 인한 디폴트값은 없음
       return null;
     },
     routes: [
       GoRoute(
-        path: "/login",
-        name: "LoginPage",
+        path: RouterStrings.PATH_LOGIN,
+        name: RouterStrings.NAME_LOGIN,
         builder: (context, state) => const LoginPage(),
       ),
       StatefulShellRoute.indexedStack(
@@ -58,14 +56,14 @@ GoRouter router(RouterRef ref) {
             navigatorKey: reserveNavigatorKey,
             routes: [
               GoRoute(
-                path: "/tumitate",
-                name: "TumitatePage",
+                path: RouterStrings.PATH_RESERVE,
+                name: RouterStrings.NAME_RESERVE,
                 builder: (context, state) => const ReservePage(),
                 routes: [
                   GoRoute(
                     parentNavigatorKey: rootNavigatorKey,
-                    path: "reserveSetting",
-                    name: "ReserveSetting",
+                    path: RouterStrings.PATH_RESERVE_SETTING,
+                    name: RouterStrings.NAME_RESERVE_SETTING,
                     builder: (context, state) => const ReserveSettingPage(),
                   ),
                 ],
@@ -76,16 +74,10 @@ GoRouter router(RouterRef ref) {
             navigatorKey: detailsNavigatorKey,
             routes: [
               GoRoute(
-                path: "/detail",
-                name: "DetailPage",
+                path: RouterStrings.PATH_DETAIL,
+                name: RouterStrings.NAME_DETAIL,
                 builder: (context, state) => const DetailPage(),
-                // routes: const [
-                // GoRoute(
-                //   path: "",
-                //   name: RouteName.FIRST_DETAIL,
-                //   builder: (context, state) => const FirstDetailsPage(),
-                // ),
-                // ],
+                routes: const [],
               ),
             ],
           ),
@@ -93,16 +85,10 @@ GoRouter router(RouterRef ref) {
             navigatorKey: conditionNavigatorKey,
             routes: [
               GoRoute(
-                path: "/",
-                name: "ConditionPage",
+                path: RouterStrings.PATH_INITIONAL,
+                name: RouterStrings.NAME_INITIONAL,
                 builder: (context, state) => const ConditionPage(),
-                // routes: const [
-                // GoRoute(
-                //   path: "",
-                //   name: RouteName.FIRST_DETAIL,
-                //   builder: (context, state) => const FirstDetailsPage(),
-                // ),
-                // ],
+                routes: const [],
               ),
             ],
           ),
@@ -110,16 +96,10 @@ GoRouter router(RouterRef ref) {
             navigatorKey: recordNavigatorKey,
             routes: [
               GoRoute(
-                path: "/record",
-                name: "RecordPage",
+                path: RouterStrings.PATH_RECORD,
+                name: RouterStrings.NAME_RECORD,
                 builder: (context, state) => const RecordPage(),
-                // routes: const [
-                // GoRoute(
-                //   path: "",
-                //   name: RouteName.FIRST_DETAIL,
-                //   builder: (context, state) => const FirstDetailsPage(),
-                // ),
-                // ],
+                routes: const [],
               ),
             ],
           ),
@@ -127,16 +107,10 @@ GoRouter router(RouterRef ref) {
             navigatorKey: menuNavigatorKey,
             routes: [
               GoRoute(
-                path: "/menu",
-                name: "MenuPage",
+                path: RouterStrings.PATH_MENU,
+                name: RouterStrings.NAME_MENU,
                 builder: (context, state) => const MenuPage(),
-                // routes: const [
-                // GoRoute(
-                //   path: "",
-                //   name: RouteName.FIRST_DETAIL,
-                //   builder: (context, state) => const FirstDetailsPage(),
-                // ),
-                // ],
+                routes: const [],
               ),
             ],
           ),

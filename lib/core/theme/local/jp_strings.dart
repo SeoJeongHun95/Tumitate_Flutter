@@ -1,6 +1,13 @@
 // ignore_for_file: constant_identifier_names
 
 class JPStrings {
+  //BottomNavBar
+  static const String RESERVE = '積立';
+  static const String DETAIL = "明細";
+  static const String RESERVECONDITION = '積立状況';
+  static const String RECORD = '履歴';
+  static const String MENU = 'メニュー';
+
   //LoginPage
   static const String LOGIN_ID = "ログインID";
   static const String PRESERVATION = "保存";
@@ -15,10 +22,11 @@ class JPStrings {
   static const String VERSION = "Ver ";
   static const String VERSION_NUMBER = "1.0.00";
 
-  //BottomNavBar
-  static const String RESERVE = '積立';
-  static const String DETAIL = "明細";
-  static const String RESERVECONDITION = '積立状況';
-  static const String RECORD = '履歴';
-  static const String MENU = 'メニュー';
+  //ReservePage
+  static const String HIGH = "H";
+  static const String LOW = "L";
+
+  //ReserveSettingPage
+  static const String SHOW = "表示";
+  static const String DONE = "完了";
 }

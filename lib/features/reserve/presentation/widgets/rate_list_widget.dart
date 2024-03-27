@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:tumitate_flutter/core/theme/local/jp_strings.dart';
 import 'package:tumitate_flutter/features/reserve/presentation/widgets/rate_menu_dialog.dart';
 
 import '../../data/models/rate.dart';
@@ -134,7 +135,7 @@ class RateListItem extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Text(
-                            "H",
+                            JPStrings.HIGH,
                             style: TextStyle(
                               color: Colors.red,
                               fontWeight: FontWeight.w700,
@@ -155,7 +156,7 @@ class RateListItem extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Text(
-                            "L",
+                            JPStrings.LOW,
                             style: TextStyle(
                               color: Colors.blue,
                               fontWeight: FontWeight.w700,
