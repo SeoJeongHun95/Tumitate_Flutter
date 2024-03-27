@@ -15,7 +15,13 @@ import 'scaffold_with_nav_bar.dart';
 
 part 'router.g.dart';
 
-final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>();
+final rootNavigatorKey = GlobalKey<NavigatorState>();
+final reserveNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'reserve');
+final detailsNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'detail');
+final conditionNavigatorKey =
+    GlobalKey<NavigatorState>(debugLabel: 'condition');
+final recordNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'record');
+final menuNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'menu');
 
 @riverpod
 GoRouter router(RouterRef ref) {
@@ -23,7 +29,7 @@ GoRouter router(RouterRef ref) {
 
   return GoRouter(
     initialLocation: "/",
-    navigatorKey: _rootNavigatorKey,
+    navigatorKey: rootNavigatorKey,
     redirect: (context, state) {
       //로그인 상태인가 아닌가를 확인
       final auth = authState;
@@ -49,6 +55,7 @@ GoRouter router(RouterRef ref) {
       StatefulShellRoute.indexedStack(
         branches: [
           StatefulShellBranch(
+            navigatorKey: reserveNavigatorKey,
             routes: [
               GoRoute(
                 path: "/tumitate",
@@ -56,6 +63,7 @@ GoRouter router(RouterRef ref) {
                 builder: (context, state) => const ReservePage(),
                 routes: [
                   GoRoute(
+                    parentNavigatorKey: rootNavigatorKey,
                     path: "reserveSetting",
                     name: "ReserveSetting",
                     builder: (context, state) => const ReserveSettingPage(),
@@ -65,6 +73,7 @@ GoRouter router(RouterRef ref) {
             ],
           ),
           StatefulShellBranch(
+            navigatorKey: detailsNavigatorKey,
             routes: [
               GoRoute(
                 path: "/detail",
@@ -81,6 +90,7 @@ GoRouter router(RouterRef ref) {
             ],
           ),
           StatefulShellBranch(
+            navigatorKey: conditionNavigatorKey,
             routes: [
               GoRoute(
                 path: "/",
@@ -97,6 +107,7 @@ GoRouter router(RouterRef ref) {
             ],
           ),
           StatefulShellBranch(
+            navigatorKey: recordNavigatorKey,
             routes: [
               GoRoute(
                 path: "/record",
@@ -113,6 +124,7 @@ GoRouter router(RouterRef ref) {
             ],
           ),
           StatefulShellBranch(
+            navigatorKey: menuNavigatorKey,
             routes: [
               GoRoute(
                 path: "/menu",
