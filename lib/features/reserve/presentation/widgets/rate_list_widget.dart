@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:tumitate_flutter/features/reserve/presentation/widgets/rate_menu_dialog.dart';
 
 import '../../data/models/rate.dart';
 import '../providers/rate_list_provider.dart';
@@ -32,144 +33,151 @@ class RateListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          flex: 2,
-          child: Row(
-            children: [
-              Image.asset(
-                "lib/core/assets/img/flg/${rate.meigaraId.toLowerCase()}.png",
+    return InkWell(
+      onTap: () => showDialog(
+        barrierDismissible: false,
+        context: context,
+        builder: (context) => RateMenuDialog(rate: rate),
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            flex: 2,
+            child: Row(
+              children: [
+                Image.asset(
+                  "lib/core/assets/img/flg/${rate.meigaraId.toLowerCase()}.png",
+                  width: 40.w,
+                  height: 25.h,
+                  fit: BoxFit.fill,
+                  errorBuilder: (context, error, stackTrace) =>
+                      Text(error.toString()),
+                ),
+                Gap(4.w),
+                Text(
+                  rate.meigaraMei,
+                  style: TextStyle(
+                    fontSize: 12.w,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Center(
+              child: Image.asset(
+                "lib/core/assets/img/chart.png",
                 width: 40.w,
                 height: 25.h,
                 fit: BoxFit.fill,
                 errorBuilder: (context, error, stackTrace) =>
                     Text(error.toString()),
               ),
-              Gap(4.w),
-              Text(
-                rate.meigaraMei,
-                style: TextStyle(
-                  fontSize: 12.w,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ],
-          ),
-        ),
-        Expanded(
-          flex: 1,
-          child: Center(
-            child: Image.asset(
-              "lib/core/assets/img/chart.png",
-              width: 40.w,
-              height: 25.h,
-              fit: BoxFit.fill,
-              errorBuilder: (context, error, stackTrace) =>
-                  Text(error.toString()),
             ),
           ),
-        ),
-        Expanded(
-          flex: 2,
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  Expanded(
-                    child: Center(
-                      child: Text(
-                        rate.offer,
-                        style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w700,
+          Expanded(
+            flex: 2,
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: Center(
+                        child: Text(
+                          rate.offer,
+                          style: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  Expanded(
-                    child: Center(
-                      child: Container(
-                        width: 50.w,
-                        height: 20.h,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: double.parse(rate.diff) > 0
-                                ? Colors.red
-                                : double.parse(rate.diff) < 0
-                                    ? Colors.blue
-                                    : Colors.grey,
-                            width: 2,
-                          ),
-                        ),
-                        child: Center(
-                          child: Text(
-                            rate.diff,
-                            style: TextStyle(
+                    Expanded(
+                      child: Center(
+                        child: Container(
+                          width: 50.w,
+                          height: 20.h,
+                          decoration: BoxDecoration(
+                            border: Border.all(
                               color: double.parse(rate.diff) > 0
                                   ? Colors.red
                                   : double.parse(rate.diff) < 0
                                       ? Colors.blue
                                       : Colors.grey,
+                              width: 2,
+                            ),
+                          ),
+                          child: Center(
+                            child: Text(
+                              rate.diff,
+                              style: TextStyle(
+                                color: double.parse(rate.diff) > 0
+                                    ? Colors.red
+                                    : double.parse(rate.diff) < 0
+                                        ? Colors.blue
+                                        : Colors.grey,
+                              ),
                             ),
                           ),
                         ),
                       ),
+                    )
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            "H",
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          Gap(4.w),
+                          Text(
+                            rate.high,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  )
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Expanded(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text(
-                          "H",
-                          style: TextStyle(
-                            color: Colors.red,
-                            fontWeight: FontWeight.w700,
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            "L",
+                            style: TextStyle(
+                              color: Colors.blue,
+                              fontWeight: FontWeight.w700,
+                            ),
                           ),
-                        ),
-                        Gap(4.w),
-                        Text(
-                          rate.high,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.w700,
+                          Gap(4.w),
+                          Text(
+                            rate.low,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w700,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                  Expanded(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text(
-                          "L",
-                          style: TextStyle(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        Gap(4.w),
-                        Text(
-                          rate.low,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
