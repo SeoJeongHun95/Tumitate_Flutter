@@ -16,14 +16,12 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$OperationCondition {
-//Head
   String get id => throw _privateConstructorUsedError;
   String get kanjiMei => throw _privateConstructorUsedError; //購入残高 外貨
   String get maisuu => throw _privateConstructorUsedError; //購入残高 円
   String get kansanMaisuu => throw _privateConstructorUsedError; //時間評価価格　円
   String get jikaHyoukagaku => throw _privateConstructorUsedError; //取引損益　円
-  String get torihikiSoneki => throw _privateConstructorUsedError; //Contents
-//効率
+  String get torihikiSoneki => throw _privateConstructorUsedError; //効率
   String get leverage => throw _privateConstructorUsedError; //評価価格
   String get bid => throw _privateConstructorUsedError; //平均価格
   String get seirituSP => throw _privateConstructorUsedError; //スワップポイント
@@ -239,7 +237,6 @@ class _$OperationConditionImpl implements _OperationCondition {
       required this.swapPoint,
       required this.hituyouSyoukokin});
 
-//Head
   @override
   final String id;
   @override
@@ -256,7 +253,6 @@ class _$OperationConditionImpl implements _OperationCondition {
 //取引損益　円
   @override
   final String torihikiSoneki;
-//Contents
 //効率
   @override
   final String leverage;
@@ -341,7 +337,7 @@ abstract class _OperationCondition implements OperationCondition {
       required final String swapPoint,
       required final String hituyouSyoukokin}) = _$OperationConditionImpl;
 
-  @override //Head
+  @override
   String get id;
   @override
   String get kanjiMei;
@@ -353,8 +349,7 @@ abstract class _OperationCondition implements OperationCondition {
   String get jikaHyoukagaku;
   @override //取引損益　円
   String get torihikiSoneki;
-  @override //Contents
-//効率
+  @override //効率
   String get leverage;
   @override //評価価格
   String get bid;
