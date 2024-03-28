@@ -12,6 +12,8 @@ class DetailPageListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(
+      iconColor: Colors.green,
+      collapsedIconColor: Colors.green,
       tilePadding: EdgeInsets.symmetric(horizontal: 10.w),
       leading: SizedBox(
         width: 56.w,
