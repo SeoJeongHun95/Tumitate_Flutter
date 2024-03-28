@@ -2,10 +2,15 @@ import 'package:animated_segmented_tab_control/animated_segmented_tab_control.da
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'detail_page_tab_1.dart';
+import 'detail_page_tab_2.dart';
+import 'detail_page_tab_3.dart';
+import 'detail_page_tab_4.dart';
+
 final List<SegmentTab> _tabs = [
   const SegmentTab(label: "運用状況"),
-  const SegmentTab(label: "定期購入\n申込一覧"),
-  const SegmentTab(label: "指値注文\n一覧"),
+  const SegmentTab(label: "定期購入"),
+  const SegmentTab(label: "指値注文"),
   const SegmentTab(label: "口座状況"),
 ];
 
@@ -38,7 +43,7 @@ class _DetailPageState extends State<DetailPage> {
               ),
               tabPadding: EdgeInsets.zero,
               squeezeDuration: const Duration(microseconds: 100),
-              height: 38.h,
+              height: 36.h,
               tabs: _tabs,
             ),
           ),
@@ -46,18 +51,10 @@ class _DetailPageState extends State<DetailPage> {
         body: const SafeArea(
           child: TabBarView(
             children: [
-              Center(
-                child: Text("運用状況"),
-              ),
-              Center(
-                child: Text("定期購入\n申込一覧"),
-              ),
-              Center(
-                child: Text("指値注文\n一覧"),
-              ),
-              Center(
-                child: Text("口座状況"),
-              ),
+              DetailPageTab1(),
+              DetailPageTab2(),
+              DetailPageTab3(),
+              DetailPageTab4(),
             ],
           ),
         ),
