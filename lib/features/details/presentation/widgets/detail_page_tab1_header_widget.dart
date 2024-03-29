@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/theme/local/jp_strings.dart';
 
-class TopHeader extends StatelessWidget {
-  const TopHeader({super.key});
+class TopHeaderWidget extends StatelessWidget {
+  const TopHeaderWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

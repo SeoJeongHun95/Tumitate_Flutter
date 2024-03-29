@@ -34,11 +34,10 @@ class _PWFormWidgetState extends ConsumerState<PWFormWidget> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SizedBox(
+        const SizedBox(
           width: double.maxFinite,
           child: Text(
             JPStrings.PASSWORD,
-            style: Theme.of(context).textTheme.titleMedium,
             textAlign: TextAlign.start,
           ),
         ),
@@ -104,11 +103,10 @@ class _PWFormWidgetState extends ConsumerState<PWFormWidget> {
                   Text(
                     JPStrings.PRESERVATION,
                     style: idSaveCheckState
-                        ? Theme.of(context).textTheme.titleMedium
-                        : Theme.of(context)
-                            .textTheme
-                            .titleMedium!
-                            .copyWith(color: Colors.grey),
+                        ? Theme.of(context).textTheme.bodyMedium
+                        : Theme.of(context).textTheme.bodyMedium!.copyWith(
+                              color: Colors.grey,
+                            ),
                   ),
                 ],
               ),

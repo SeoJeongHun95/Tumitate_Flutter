@@ -33,11 +33,10 @@ class _IDFormWidgetState extends ConsumerState<IDFormWidget> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SizedBox(
+        const SizedBox(
           width: double.maxFinite,
           child: Text(
             JPStrings.LOGIN_ID,
-            style: Theme.of(context).textTheme.titleMedium,
             textAlign: TextAlign.start,
           ),
         ),
@@ -96,9 +95,8 @@ class _IDFormWidgetState extends ConsumerState<IDFormWidget> {
                       },
                     ),
                   ),
-                  Text(
+                  const Text(
                     JPStrings.PRESERVATION,
-                    style: Theme.of(context).textTheme.titleMedium,
                   ),
                 ],
               ),

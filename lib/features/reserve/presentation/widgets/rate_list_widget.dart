@@ -57,9 +57,10 @@ class RateListItem extends StatelessWidget {
                 Gap(4.w),
                 Text(
                   rate.meigaraMei,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.w600,
-                  ),
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyMedium!
+                      .copyWith(fontWeight: FontWeight.bold),
                 ),
               ],
             ),
@@ -87,10 +88,11 @@ class RateListItem extends StatelessWidget {
                       child: Center(
                         child: Text(
                           rate.offer,
-                          style: TextStyle(
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w700,
-                          ),
+                          style:
+                              Theme.of(context).textTheme.bodyMedium!.copyWith(
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                         ),
                       ),
                     ),
@@ -112,13 +114,17 @@ class RateListItem extends StatelessWidget {
                           child: Center(
                             child: Text(
                               rate.diff,
-                              style: TextStyle(
-                                color: double.parse(rate.diff) > 0
-                                    ? Colors.red
-                                    : double.parse(rate.diff) < 0
-                                        ? Colors.blue
-                                        : Colors.grey,
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .copyWith(
+                                    fontWeight: FontWeight.bold,
+                                    color: double.parse(rate.diff) > 0
+                                        ? Colors.red
+                                        : double.parse(rate.diff) < 0
+                                            ? Colors.blue
+                                            : Colors.grey,
+                                  ),
                             ),
                           ),
                         ),
@@ -133,19 +139,25 @@ class RateListItem extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Text(
+                          Text(
                             JPStrings.HIGH,
-                            style: TextStyle(
-                              color: Colors.red,
-                              fontWeight: FontWeight.w700,
-                            ),
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium!
+                                .copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.red,
+                                ),
                           ),
                           Gap(4.w),
                           Text(
                             rate.high,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.w700,
-                            ),
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium!
+                                .copyWith(
+                                  fontWeight: FontWeight.bold,
+                                ),
                           ),
                         ],
                       ),
@@ -154,19 +166,25 @@ class RateListItem extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Text(
+                          Text(
                             JPStrings.LOW,
-                            style: TextStyle(
-                              color: Colors.blue,
-                              fontWeight: FontWeight.w700,
-                            ),
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium!
+                                .copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.blue,
+                                ),
                           ),
                           Gap(4.w),
                           Text(
                             rate.low,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.w700,
-                            ),
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium!
+                                .copyWith(
+                                  fontWeight: FontWeight.bold,
+                                ),
                           ),
                         ],
                       ),

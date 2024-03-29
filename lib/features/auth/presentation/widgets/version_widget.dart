@@ -7,12 +7,11 @@ class VersionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return const SizedBox(
       width: double.maxFinite,
       child: Text(
         JPStrings.VERSION + JPStrings.VERSION_NUMBER,
         textAlign: TextAlign.end,
-        style: Theme.of(context).textTheme.titleMedium,
       ),
     );
   }

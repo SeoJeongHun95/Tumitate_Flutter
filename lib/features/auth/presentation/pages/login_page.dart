@@ -19,10 +19,11 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(20.w),
+          padding: EdgeInsets.all(8.w),
           child: SingleChildScrollView(
             child: Column(
               children: [
+                Gap(20.h),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 40.w),
                   child: const LogoWidget(),

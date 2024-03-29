@@ -17,9 +17,8 @@ class BioSwitchWidget extends ConsumerWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
+        const Text(
           JPStrings.BIOLOGIN,
-          style: Theme.of(context).textTheme.titleMedium,
         ),
         Switch(
           value: bioLoginToggleState,

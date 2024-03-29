@@ -7,14 +7,15 @@ import '../../data/models/operation_condition.dart';
 import '../providers/operation_condition_provider.dart';
 import 'detail_page_tab1_list_item.dart';
 
-class DetailPageList extends ConsumerStatefulWidget {
-  const DetailPageList({super.key});
+class DetailPageListWidget extends ConsumerStatefulWidget {
+  const DetailPageListWidget({super.key});
 
   @override
-  ConsumerState<DetailPageList> createState() => _DetailPageListState();
+  ConsumerState<DetailPageListWidget> createState() =>
+      _DetailPageListWidgetState();
 }
 
-class _DetailPageListState extends ConsumerState<DetailPageList> {
+class _DetailPageListWidgetState extends ConsumerState<DetailPageListWidget> {
   @override
   Widget build(BuildContext context) {
     final operationConditionList = ref.watch(operationConditionsProvider);
@@ -22,11 +23,10 @@ class _DetailPageListState extends ConsumerState<DetailPageList> {
     return operationConditionList.isEmpty
         ? Padding(
             padding: EdgeInsets.all(16.w),
-            child: SizedBox(
+            child: const SizedBox(
               width: double.maxFinite,
               child: Text(
                 JPStrings.DETAIL_SEGMENTTAB_1_EMPTY,
-                style: Theme.of(context).textTheme.titleMedium,
               ),
             ),
           )

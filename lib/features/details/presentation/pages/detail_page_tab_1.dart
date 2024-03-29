@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../widgets/detail_page_tab1_header_widget.dart';
-import '../widgets/detail_page_tab1_list.dart';
+import '../widgets/detail_page_tab1_list_widget.dart';
 
 class DetailPageTab1 extends StatelessWidget {
   const DetailPageTab1({super.key});
@@ -12,9 +12,9 @@ class DetailPageTab1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        TopHeader(),
+        TopHeaderWidget(),
         Expanded(
-          child: DetailPageList(),
+          child: DetailPageListWidget(),
         ),
       ],
     );

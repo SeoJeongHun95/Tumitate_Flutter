@@ -17,9 +17,8 @@ class AutoLoginWidget extends ConsumerWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
+        const Text(
           JPStrings.AUTOLOGIN,
-          style: Theme.of(context).textTheme.titleMedium,
         ),
         Switch(
           value: autoLoginSwitchState,

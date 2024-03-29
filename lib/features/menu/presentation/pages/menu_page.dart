@@ -40,9 +40,8 @@ class MenuPage extends ConsumerWidget {
               const Text("Login State"),
               ElevatedButton(
                 onPressed: () => ref.read(authProvider.notifier).logout(),
-                child: Text(
+                child: const Text(
                   "ログアウト",
-                  style: Theme.of(context).textTheme.titleMedium,
                 ),
               ),
               Gap(10.h),
@@ -50,9 +49,8 @@ class MenuPage extends ConsumerWidget {
               ElevatedButton(
                 onPressed: () =>
                     ref.read(operationConditionsProvider.notifier).reset(),
-                child: Text(
+                child: const Text(
                   "Reset",
-                  style: Theme.of(context).textTheme.titleMedium,
                 ),
               ),
             ],

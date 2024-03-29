@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:tumitate_flutter/core/theme/local/jp_strings.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/theme/local/jp_strings.dart';
 import '../providers/rate_list_provider.dart';
 import '../providers/rate_setting_provider.dart';
 import '../widgets/rate_liset_setting_widget.dart';
@@ -28,7 +29,7 @@ class ReserveSettingPage extends ConsumerWidget {
                     rateSettingList.length
                 ? Colors.black
                 : Colors.red,
-            fontSize: 20,
+            fontSize: 14.sp,
           ),
         ),
         actions: [
@@ -39,11 +40,11 @@ class ReserveSettingPage extends ConsumerWidget {
                   .chageSetting(changeList: rateSettingList);
               Navigator.of(context).pop();
             },
-            child: const Text(
+            child: Text(
               JPStrings.DONE,
               style: TextStyle(
                 color: Colors.lightGreen,
-                fontSize: 20,
+                fontSize: 14.sp,
               ),
             ),
           ),

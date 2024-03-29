@@ -40,9 +40,10 @@ class RateMenuDialog extends StatelessWidget {
                       Gap(8.w),
                       Text(
                         rate.meigaraMei,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w600,
-                        ),
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyMedium!
+                            .copyWith(fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
@@ -54,9 +55,8 @@ class RateMenuDialog extends StatelessWidget {
                       backgroundColor: TumitateColors().dGreen,
                     ),
                     onPressed: () {},
-                    child: Text(
+                    child: const Text(
                       "定期購入申込",
-                      style: Theme.of(context).textTheme.titleMedium,
                     ),
                   ),
                 ),
@@ -67,9 +67,8 @@ class RateMenuDialog extends StatelessWidget {
                       backgroundColor: TumitateColors().dGreen,
                     ),
                     onPressed: () {},
-                    child: Text(
+                    child: const Text(
                       "即時購入",
-                      style: Theme.of(context).textTheme.titleMedium,
                     ),
                   ),
                 ),
@@ -80,9 +79,8 @@ class RateMenuDialog extends StatelessWidget {
                       backgroundColor: TumitateColors().dGreen,
                     ),
                     onPressed: () {},
-                    child: Text(
+                    child: const Text(
                       "シミレーション",
-                      style: Theme.of(context).textTheme.titleMedium,
                     ),
                   ),
                 ),
@@ -95,9 +93,8 @@ class RateMenuDialog extends StatelessWidget {
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
-                    child: Text(
+                    child: const Text(
                       "キャンセル",
-                      style: Theme.of(context).textTheme.titleMedium,
                     ),
                   ),
                 ),
