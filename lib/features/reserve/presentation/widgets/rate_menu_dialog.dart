@@ -40,8 +40,7 @@ class RateMenuDialog extends StatelessWidget {
                       Gap(8.w),
                       Text(
                         rate.meigaraMei,
-                        style: TextStyle(
-                          fontSize: 12.w,
+                        style: const TextStyle(
                           fontWeight: FontWeight.w600,
                         ),
                       ),

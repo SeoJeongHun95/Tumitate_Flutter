@@ -44,8 +44,7 @@ class RateListSettingWidget extends ConsumerWidget {
                   Gap(4.w),
                   Text(
                     rs.meigaraMei,
-                    style: TextStyle(
-                      fontSize: 12.w,
+                    style: const TextStyle(
                       fontWeight: FontWeight.w600,
                     ),
                   ),

@@ -18,6 +18,7 @@ class MyApp extends ConsumerWidget {
 
     return ScreenUtilInit(
       builder: (context, child) => MaterialApp.router(
+        routerConfig: route,
         debugShowCheckedModeBanner: false,
         title: 'Tumitate Flutter',
         theme: ThemeData(
@@ -25,11 +26,21 @@ class MyApp extends ConsumerWidget {
             seedColor: TumitateColors().dGreen,
             background: Colors.white,
           ),
+          textTheme: TextTheme(
+            bodyMedium: Theme.of(context)
+                .textTheme
+                .bodyMedium!
+                .copyWith(fontSize: 12.sp),
+          ),
           appBarTheme:
               const AppBarTheme().copyWith(backgroundColor: Colors.white),
           useMaterial3: true,
         ),
-        routerConfig: route,
+        builder: (context, child) => MediaQuery(
+          data: MediaQuery.of(context)
+              .copyWith(textScaler: const TextScaler.linear(1)),
+          child: child!,
+        ),
       ),
     );
   }

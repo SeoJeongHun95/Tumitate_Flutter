@@ -29,4 +29,18 @@ class JPStrings {
   //ReserveSettingPage
   static const String SHOW = "表示";
   static const String DONE = "完了";
+
+  //DetailPage
+  static const String SEGMENTTAB_1 = "運用状況";
+  static const String SEGMENTTAB_2 = "定期購入";
+  static const String SEGMENTTAB_3 = "指値注文";
+  static const String SEGMENTTAB_4 = "口座状況";
+
+  //DetailTab1 - Header
+  static const String DETAIL_SEGMENTTAB_1_HEADER_TUKA = "通貨";
+  static const String DETAIL_SEGMENTTAB_1_HEADER_KONYUZANTAKA_GAIKA =
+      "購入残高(外貨)";
+  static const String DETAIL_SEGMENTTAB_1_HEADER_KONYUZANTAKA_ENN = "購入残高(円換算)";
+  static const String DETAIL_SEGMENTTAB_1_HEADER_ZIKANHYOUKAGAKU = "時間評価額(円)";
+  static const String DETAIL_SEGMENTTAB_1_HEADER_SASIHIKISONEKI = "差引損益(円)";
 }

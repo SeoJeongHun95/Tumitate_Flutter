@@ -2,16 +2,17 @@ import 'package:animated_segmented_tab_control/animated_segmented_tab_control.da
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/theme/local/jp_strings.dart';
 import 'detail_page_tab_1.dart';
 import 'detail_page_tab_2.dart';
 import 'detail_page_tab_3.dart';
 import 'detail_page_tab_4.dart';
 
 final List<SegmentTab> _tabs = [
-  const SegmentTab(label: "運用状況"),
-  const SegmentTab(label: "定期購入"),
-  const SegmentTab(label: "指値注文"),
-  const SegmentTab(label: "口座状況"),
+  const SegmentTab(label: JPStrings.SEGMENTTAB_1),
+  const SegmentTab(label: JPStrings.SEGMENTTAB_2),
+  const SegmentTab(label: JPStrings.SEGMENTTAB_3),
+  const SegmentTab(label: JPStrings.SEGMENTTAB_4),
 ];
 
 class DetailPage extends StatefulWidget {
@@ -38,9 +39,6 @@ class _DetailPageState extends State<DetailPage> {
               selectedTabTextColor: Colors.white,
               indicatorColor: Colors.lightGreen,
               tabTextColor: Colors.black,
-              textStyle: TextStyle(
-                fontSize: Theme.of(context).textTheme.titleMedium!.fontSize,
-              ),
               tabPadding: EdgeInsets.zero,
               squeezeDuration: const Duration(microseconds: 100),
               height: 36.h,

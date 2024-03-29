@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/theme/local/jp_strings.dart';
+
 class TopHeader extends StatelessWidget {
   const TopHeader({super.key});
 
@@ -19,10 +21,9 @@ class TopHeader extends StatelessWidget {
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey),
                 ),
-                child: Center(
+                child: const Center(
                   child: Text(
-                    "通貨",
-                    style: Theme.of(context).textTheme.titleMedium,
+                    JPStrings.DETAIL_SEGMENTTAB_1_HEADER_TUKA,
                   ),
                 ),
               ),
@@ -40,10 +41,10 @@ class TopHeader extends StatelessWidget {
                           right: BorderSide(color: Colors.grey),
                         ),
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text(
-                          "購入残高(外貨)",
-                          style: Theme.of(context).textTheme.titleMedium,
+                          JPStrings
+                              .DETAIL_SEGMENTTAB_1_HEADER_KONYUZANTAKA_GAIKA,
                         ),
                       ),
                     ),
@@ -56,10 +57,9 @@ class TopHeader extends StatelessWidget {
                           right: BorderSide(color: Colors.grey),
                         ),
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text(
-                          "購入残高(円換算)",
-                          style: Theme.of(context).textTheme.titleMedium,
+                          JPStrings.DETAIL_SEGMENTTAB_1_HEADER_KONYUZANTAKA_ENN,
                         ),
                       ),
                     ),
@@ -79,10 +79,9 @@ class TopHeader extends StatelessWidget {
                           bottom: BorderSide(color: Colors.grey),
                         ),
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text(
-                          "時間評価額(円)",
-                          style: Theme.of(context).textTheme.titleMedium,
+                          JPStrings.DETAIL_SEGMENTTAB_1_HEADER_ZIKANHYOUKAGAKU,
                         ),
                       ),
                     ),
@@ -94,10 +93,9 @@ class TopHeader extends StatelessWidget {
                           bottom: BorderSide(color: Colors.grey),
                         ),
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text(
-                          "差引損益(円)",
-                          style: Theme.of(context).textTheme.titleMedium,
+                          JPStrings.DETAIL_SEGMENTTAB_1_HEADER_SASIHIKISONEKI,
                         ),
                       ),
                     ),

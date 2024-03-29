@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tumitate_flutter/features/details/presentation/providers/operation_condition_provider.dart';
 
 import '../../../../core/theme/color/tumitate_colors.dart';
 import '../../data/models/operation_condition.dart';
+import '../providers/operation_condition_provider.dart';
 
 class DetailPageListItem extends ConsumerWidget {
   const DetailPageListItem({super.key, required this.oc});
@@ -34,13 +34,12 @@ class DetailPageListItem extends ConsumerWidget {
             ),
             Text(
               oc.kanjiMei,
-              style: Theme.of(context).textTheme.titleSmall,
             ),
           ],
         ),
       ),
       title: SizedBox(
-        height: 40.h,
+        height: 44.h,
         width: double.maxFinite,
         child: Row(
           children: [
@@ -48,7 +47,14 @@ class DetailPageListItem extends ConsumerWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.end,
-                children: [Text(oc.maisuu), Text(oc.kansanMaisuu)],
+                children: [
+                  Text(
+                    oc.maisuu,
+                  ),
+                  Text(
+                    oc.kansanMaisuu,
+                  )
+                ],
               ),
             ),
             Expanded(
@@ -56,7 +62,9 @@ class DetailPageListItem extends ConsumerWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text(oc.jikaHyoukagaku),
+                  Text(
+                    oc.jikaHyoukagaku,
+                  ),
                   Text(
                     oc.torihikiSoneki,
                     style: const TextStyle(color: Colors.green),
@@ -85,8 +93,10 @@ class DetailPageListItem extends ConsumerWidget {
                     children: [
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
+                          padding: const EdgeInsets.all(0),
                           backgroundColor: TumitateColors().btnGreen,
                           foregroundColor: Colors.black,
+                          fixedSize: Size(16 * 3.w, 9 * 3.w),
                         ),
                         onPressed: () {
                           ref
@@ -100,14 +110,19 @@ class DetailPageListItem extends ConsumerWidget {
                   Divider(color: Colors.grey[300]),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [const Text("投資効率"), Text(oc.leverage)],
+                    children: [
+                      const Text("投資効率"),
+                      Text(
+                        oc.leverage,
+                      ),
+                    ],
                   ),
                   Divider(color: Colors.grey[300]),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text("購入残高（外貨）"),
-                      Text("${oc.maisuu} ${oc.kanjiMei}")
+                      Text("${oc.maisuu} ${oc.kanjiMei}"),
                     ],
                   ),
                   Divider(color: Colors.grey[300]),
@@ -115,7 +130,12 @@ class DetailPageListItem extends ConsumerWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text("購入残高（円換算）"),
-                      Row(children: [Text(oc.kansanMaisuu), const Text(" 円")]),
+                      Row(children: [
+                        Text(
+                          oc.kansanMaisuu,
+                        ),
+                        const Text(" 円"),
+                      ]),
                     ],
                   ),
                   Divider(color: Colors.grey[300]),
@@ -123,7 +143,12 @@ class DetailPageListItem extends ConsumerWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text("購入平均価格"),
-                      Row(children: [Text(oc.seirituSP), const Text(" 円")]),
+                      Row(children: [
+                        Text(
+                          oc.seirituSP,
+                        ),
+                        const Text(" 円"),
+                      ]),
                     ],
                   ),
                   Divider(color: Colors.grey[300]),
@@ -131,7 +156,12 @@ class DetailPageListItem extends ConsumerWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text("評価価格"),
-                      Row(children: [Text(oc.bid), const Text(" 円")]),
+                      Row(children: [
+                        Text(
+                          oc.bid,
+                        ),
+                        const Text(" 円"),
+                      ]),
                     ],
                   ),
                   Divider(color: Colors.grey[300]),
@@ -142,7 +172,7 @@ class DetailPageListItem extends ConsumerWidget {
                       Row(children: [
                         Text(oc.jikaHyoukagaku,
                             style: const TextStyle(color: Colors.green)),
-                        const Text(" 円")
+                        const Text(" 円"),
                       ]),
                     ],
                   ),
@@ -154,7 +184,7 @@ class DetailPageListItem extends ConsumerWidget {
                       Row(children: [
                         Text(oc.swapPoint,
                             style: const TextStyle(color: Colors.green)),
-                        const Text(" 円")
+                        const Text(" 円"),
                       ])
                     ],
                   ),
@@ -164,8 +194,10 @@ class DetailPageListItem extends ConsumerWidget {
                     children: [
                       const Text("取引必要証拠金"),
                       Row(children: [
-                        Text(oc.hituyouSyoukokin),
-                        const Text(" 円")
+                        Text(
+                          oc.hituyouSyoukokin,
+                        ),
+                        const Text(" 円"),
                       ])
                     ],
                   ),

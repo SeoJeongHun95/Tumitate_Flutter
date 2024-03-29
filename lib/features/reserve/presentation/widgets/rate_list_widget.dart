@@ -57,8 +57,7 @@ class RateListItem extends StatelessWidget {
                 Gap(4.w),
                 Text(
                   rate.meigaraMei,
-                  style: TextStyle(
-                    fontSize: 12.w,
+                  style: const TextStyle(
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -88,8 +87,8 @@ class RateListItem extends StatelessWidget {
                       child: Center(
                         child: Text(
                           rate.offer,
-                          style: const TextStyle(
-                            fontSize: 20,
+                          style: TextStyle(
+                            fontSize: 18.sp,
                             fontWeight: FontWeight.w700,
                           ),
                         ),
