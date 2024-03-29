@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../data/models/operation_condition.dart';
 import '../providers/operation_condition_provider.dart';
@@ -17,13 +18,24 @@ class _DetailPageListState extends ConsumerState<DetailPageList> {
   Widget build(BuildContext context) {
     final operationConditionList = ref.watch(operationConditionsProvider);
 
-    return ListView.builder(
-      itemCount: operationConditionList.length,
-      itemBuilder: (context, index) {
-        final OperationCondition oc = operationConditionList[index];
+    return operationConditionList.isEmpty
+        ? Padding(
+            padding: EdgeInsets.all(16.w),
+            child: SizedBox(
+              width: double.maxFinite,
+              child: Text(
+                "購入済みの外貨はございません。",
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            ),
+          )
+        : ListView.builder(
+            itemCount: operationConditionList.length,
+            itemBuilder: (context, index) {
+              final OperationCondition oc = operationConditionList[index];
 
-        return DetailPageListItem(oc: oc);
-      },
-    );
+              return DetailPageListItem(oc: oc);
+            },
+          );
   }
 }

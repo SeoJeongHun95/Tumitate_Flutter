@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tumitate_flutter/features/details/presentation/providers/operation_condition_provider.dart';
 
 import '../../../../core/theme/color/tumitate_colors.dart';
 import '../../data/models/operation_condition.dart';
 
-class DetailPageListItem extends StatelessWidget {
+class DetailPageListItem extends ConsumerWidget {
   const DetailPageListItem({super.key, required this.oc});
 
   final OperationCondition oc;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return ExpansionTile(
       iconColor: Colors.green,
       collapsedIconColor: Colors.green,
@@ -86,7 +88,11 @@ class DetailPageListItem extends StatelessWidget {
                           backgroundColor: TumitateColors().btnGreen,
                           foregroundColor: Colors.black,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          ref
+                              .read(operationConditionsProvider.notifier)
+                              .remove(oc.id);
+                        },
                         child: const Text("売却"),
                       ),
                     ],
