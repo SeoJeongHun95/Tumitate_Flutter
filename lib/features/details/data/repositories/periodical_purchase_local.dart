@@ -1,0 +1,40 @@
+import '../models/periodical_purchase.dart';
+
+List<PeriodicalPurchase> periodicalPurchaseLocalData = [
+  const PeriodicalPurchase(
+    meigaraId: "usa",
+    meigaraKanji: "米ドル",
+    leverageCourse: "",
+    leverage: "2倍",
+    hindo: "毎日",
+    maisuu: "300米ドル",
+    enable: 1,
+    settingType: "",
+    timeStamp: "毎堂営業 09:55:00 ",
+    id: "123214",
+  ),
+  const PeriodicalPurchase(
+    meigaraId: "usa",
+    meigaraKanji: "米ドル",
+    leverageCourse: "",
+    leverage: "3倍",
+    hindo: "毎日",
+    maisuu: "証拠金 3,300 円ぶん",
+    enable: 1,
+    settingType: "",
+    timeStamp: "毎堂営業 09:55:00 ",
+    id: "534224",
+  ),
+  const PeriodicalPurchase(
+    meigaraId: "gbr",
+    meigaraKanji: "英ポンド",
+    leverageCourse: "",
+    leverage: "1倍",
+    hindo: "毎日",
+    maisuu: "証拠金 3,300 円ぶん",
+    enable: 1,
+    settingType: "",
+    timeStamp: "毎堂営業 09:55:00 ",
+    id: "435243",
+  ),
+];

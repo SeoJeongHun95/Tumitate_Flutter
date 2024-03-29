@@ -43,4 +43,7 @@ class JPStrings {
   static const String DETAIL_SEGMENTTAB_1_HEADER_KONYUZANTAKA_ENN = "購入残高(円換算)";
   static const String DETAIL_SEGMENTTAB_1_HEADER_ZIKANHYOUKAGAKU = "時間評価額(円)";
   static const String DETAIL_SEGMENTTAB_1_HEADER_SASIHIKISONEKI = "差引損益(円)";
+
+  //DetailTab1 - List
+  static const String DETAIL_SEGMENTTAB_1_EMPTY = "購入済みの外貨はございません。";
 }

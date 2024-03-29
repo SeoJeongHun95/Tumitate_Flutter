@@ -5,8 +5,6 @@ class DetailPageTab2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.orange,
-    );
+    return Container();
   }
 }

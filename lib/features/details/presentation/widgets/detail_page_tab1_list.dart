@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/theme/local/jp_strings.dart';
 import '../../data/models/operation_condition.dart';
 import '../providers/operation_condition_provider.dart';
 import 'detail_page_tab1_list_item.dart';
@@ -24,7 +25,7 @@ class _DetailPageListState extends ConsumerState<DetailPageList> {
             child: SizedBox(
               width: double.maxFinite,
               child: Text(
-                "購入済みの外貨はございません。",
+                JPStrings.DETAIL_SEGMENTTAB_1_EMPTY,
                 style: Theme.of(context).textTheme.titleMedium,
               ),
             ),

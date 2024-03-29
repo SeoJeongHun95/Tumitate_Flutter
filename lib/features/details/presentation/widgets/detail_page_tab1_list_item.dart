@@ -50,9 +50,11 @@ class DetailPageListItem extends ConsumerWidget {
                 children: [
                   Text(
                     oc.maisuu,
+                    style: TextStyle(fontSize: 11.sp),
                   ),
                   Text(
                     oc.kansanMaisuu,
+                    style: TextStyle(fontSize: 11.sp),
                   )
                 ],
               ),
@@ -64,10 +66,11 @@ class DetailPageListItem extends ConsumerWidget {
                 children: [
                   Text(
                     oc.jikaHyoukagaku,
+                    style: TextStyle(fontSize: 11.sp),
                   ),
                   Text(
                     oc.torihikiSoneki,
-                    style: const TextStyle(color: Colors.green),
+                    style: TextStyle(color: Colors.green, fontSize: 11.sp),
                   )
                 ],
               ),
@@ -103,7 +106,10 @@ class DetailPageListItem extends ConsumerWidget {
                               .read(operationConditionsProvider.notifier)
                               .remove(oc.id);
                         },
-                        child: const Text("売却"),
+                        child: Text(
+                          "売却",
+                          style: TextStyle(fontSize: 12.sp),
+                        ),
                       ),
                     ],
                   ),

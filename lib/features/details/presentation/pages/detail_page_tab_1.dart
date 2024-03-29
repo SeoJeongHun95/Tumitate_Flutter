@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import '../widgets/detail_page_tab1_list.dart';
 
 import '../widgets/detail_page_tab1_header_widget.dart';
+import '../widgets/detail_page_tab1_list.dart';
 
 class DetailPageTab1 extends StatelessWidget {
   const DetailPageTab1({super.key});
@@ -13,7 +13,9 @@ class DetailPageTab1 extends StatelessWidget {
     return const Column(
       children: [
         TopHeader(),
-        Expanded(child: DetailPageList()),
+        Expanded(
+          child: DetailPageList(),
+        ),
       ],
     );
   }
