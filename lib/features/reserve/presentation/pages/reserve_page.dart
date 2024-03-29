@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:tumitate_flutter/core/router/router_strings.dart';
 
 import '../widgets/rate_list_widget.dart';
 
@@ -16,7 +17,7 @@ class ReservePage extends ConsumerWidget {
         actions: [
           IconButton(
             onPressed: () {
-              context.goNamed("ReserveSetting");
+              context.goNamed(RouterStrings.NAME_RESERVE_SETTING);
             },
             icon: Icon(
               Icons.settings_outlined,

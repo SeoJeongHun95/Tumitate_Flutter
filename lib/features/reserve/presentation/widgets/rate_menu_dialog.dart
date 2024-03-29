@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 import '../../../../core/theme/color/tumitate_colors.dart';
+import '../../../../core/theme/local/jp_strings.dart';
 import '../../data/models/rate.dart';
 
 class RateMenuDialog extends StatelessWidget {
@@ -55,8 +56,11 @@ class RateMenuDialog extends StatelessWidget {
                       backgroundColor: TumitateColors().dGreen,
                     ),
                     onPressed: () {},
-                    child: const Text(
-                      "定期購入申込",
+                    child: Text(
+                      JPStrings.RESERVEPAGE_DIALOG_TEIKIKOUNYU,
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
                     ),
                   ),
                 ),
@@ -67,8 +71,11 @@ class RateMenuDialog extends StatelessWidget {
                       backgroundColor: TumitateColors().dGreen,
                     ),
                     onPressed: () {},
-                    child: const Text(
-                      "即時購入",
+                    child: Text(
+                      JPStrings.RESERVEPAGE_DIALOG_SOKUZIKOUNYU,
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
                     ),
                   ),
                 ),
@@ -79,8 +86,11 @@ class RateMenuDialog extends StatelessWidget {
                       backgroundColor: TumitateColors().dGreen,
                     ),
                     onPressed: () {},
-                    child: const Text(
-                      "シミレーション",
+                    child: Text(
+                      JPStrings.RESERVEPAGE_DIALOG_SIMULATION,
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
                     ),
                   ),
                 ),
@@ -93,8 +103,11 @@ class RateMenuDialog extends StatelessWidget {
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
-                    child: const Text(
-                      "キャンセル",
+                    child: Text(
+                      JPStrings.RESERVEPAGE_DIALOG_CANCEL,
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
                     ),
                   ),
                 ),

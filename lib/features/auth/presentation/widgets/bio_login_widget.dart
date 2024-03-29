@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:tumitate_flutter/core/theme/local/jp_strings.dart';
 
+import '../../../../core/theme/local/jp_strings.dart';
 import '../providers/login_page/auto_login_switch_provider.dart';
 import '../providers/login_page/bio_login_switch_provider.dart';
 import '../providers/login_page/pw_save_check_provider.dart';

@@ -22,6 +22,8 @@ class JPStrings {
   static const String VERSION = "Ver ";
   static const String VERSION_NUMBER = "1.0.00";
 
+  static const String LOGO = "lib/core/assets/img/sfLogo.png";
+
   //ReservePage
   static const String HIGH = "H";
   static const String LOW = "L";
@@ -29,6 +31,12 @@ class JPStrings {
   //ReserveSettingPage
   static const String SHOW = "表示";
   static const String DONE = "完了";
+
+  //ReservePageDialog
+  static const String RESERVEPAGE_DIALOG_TEIKIKOUNYU = "定期購入申込";
+  static const String RESERVEPAGE_DIALOG_SOKUZIKOUNYU = "即時購入";
+  static const String RESERVEPAGE_DIALOG_SIMULATION = "シミレーション";
+  static const String RESERVEPAGE_DIALOG_CANCEL = "キャンセル";
 
   //DetailPage
   static const String SEGMENTTAB_1 = "運用状況";

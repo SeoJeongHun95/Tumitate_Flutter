@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'package:tumitate_flutter/core/theme/local/jp_strings.dart';
-import 'package:tumitate_flutter/features/reserve/presentation/widgets/rate_menu_dialog.dart';
 
+import '../../../../core/theme/local/jp_strings.dart';
 import '../../data/models/rate.dart';
 import '../providers/rate_list_provider.dart';
+import 'rate_menu_dialog.dart';
 
 class RateListWidget extends ConsumerWidget {
   const RateListWidget({super.key});
