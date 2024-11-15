@@ -24,7 +24,7 @@ class MyApp extends ConsumerWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(
             seedColor: TumitateColors().dGreen,
-            background: Colors.white,
+            surface: Colors.white,
           ),
           textTheme: TextTheme(
             bodyMedium: Theme.of(context)

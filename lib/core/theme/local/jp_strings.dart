@@ -18,7 +18,7 @@ class JPStrings {
   static const String WEBTOLINK_TEXT_1 = "ログインでお困りの方はこちら";
   static const String WEBTOLINK_TEXT_2 = "パスワードをお忘れの方はこちら";
   static const String WEBTOLINK_TEXT_3 = "口座開設をご希望の方はこちら";
-  static const String WEBTOLINK_URL = 'https://www.sinfo-inc.co.jp';
+  static const String WEBTOLINK_URL = 'https://www.google.co.kr/?hl=ko';
   static const String VERSION = "Ver ";
   static const String VERSION_NUMBER = "1.0.00";
 
